@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    
+    
+    <row>
+        <ThreatID>APP-0</ThreatID>
+        <ThreatCategory>Vulnerable Applications</ThreatCategory>
+        <Threat>Eavesdropping on Unencryted App Traffic</Threat>
+        
+        
+        <ExploitExamples>Remote Code Execution as System User on Samsung Phones [^55]</ExploitExamples>
+        <ExploitExamples>Insecurity Cameras and Mobile Apps: Surveillance or Exposure? [^56]</ExploitExamples>
+        <ExploitExamples>Team Joch vs. Android [^57]</ExploitExamples>
+        <ExploitExamples>CBS App &amp; Mobility Website [^116]</ExploitExamples>
+        <ExploitExamples>The Fork [^117]</ExploitExamples>
+        <ExploitExamples>Card Crypt [^121]</ExploitExamples>
+        
+        <CVEExamples>CVE-2015-4640</CVEExamples>
+        <CVEExamples>CVE-2017-2412</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>To use HTTPS for web servers that support both HTTP and HTTPS, prepend URLs entered into the browser location bar with 'https://'.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>Implement secure communications in apps. On iOS, use the App Transport Security feature. On Android, opt out of the use of Cleartext traffic.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Use app vetting tools/services that can detect the use of cleartext traffic in mobile apps before deployment within your organization.</Countermeasure>
+            <Countermeasure>To protect the confidentiality of enterprise data against passive interception, particularly when mobile devices may be connected to public networks (e.g. coffee shop Wi-Fi), deploy mobile VPN technologies to encapsulate potentially clear-text network traffic with a layer of strong encryption.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-1</ThreatID>
+        <ThreatCategory>Vulnerable Applications</ThreatCategory>
+        <Threat>Man-in-the-middle Attack on Server Authentication</Threat>
+        
+        <ThreatOrigins>Mobile Threat Protection: A Holistic Approach to Securing Mobile Data and Devices [^61]</ThreatOrigins>
+        
+        <ExploitExamples>Why Eve and Mallory Love Android: An Analysis of Android SSL (In)Security [^62]</ExploitExamples>
+        <ExploitExamples>SMV-HUNTER: Large Scale, Automated Detection of SSL/TLS Man-in-the-Middle Vulnerabilities in Android Apps [^63]</ExploitExamples>
+        <ExploitExamples>How We Discovered Thousands of Vulnerable Android Apps in One Day [^65]</ExploitExamples>
+        
+        <CVEExamples>CVE-2016-3664</CVEExamples>
+        <CVEExamples>CVE-2014-5618</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>Use fail-safe logic when establishing a connection to the back-end server; if server certificate validation fails, do not continue to negotiate a secure session or fall back to an unencrypted communication protocol, and warn the app user.</Countermeasure>
+            <Countermeasure>On Android devices, use the Android Network Security Policy feature, Certificate Pinning.</Countermeasure>
+            <Countermeasure>To reduce the impact of a successful MiTM attack on your application, consider the use of public key cryptography to protect sensitive data destined for back-end servers prior to transmission off the device.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>App vetting tools/services or pen testing to detect MiTM vulnerabilities in mobile apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-10</ThreatID>
+        <ThreatCategory>Vulnerable Applications</ThreatCategory>
+        <Threat>Poorly Implemented Cryptography</Threat>
+        
+        <ThreatOrigins>OWASP Mobile Top 10 2016 [^9]</ThreatOrigins>
+        
+        <ExploitExamples>FortiClient Multiple Vulnerabilities [^82]</ExploitExamples>
+        
+        <CVEExamples>CVE-2017-4896 [^AirWatch-1]</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>Strictly avoid the use of hard-coded cryptographic keys in application source code.</Countermeasure>
+            <Countermeasure>Explicitly overwrite variables containing cryptographic keys or other secrets following each use to prevent unauthorized disclosure of the secret if that memory location is subsequently accessed by untrusted code.</Countermeasure>
+            <Countermeasure>Use each cryptographic key for a single purpose to limit the impact of key compromise.</Countermeasure>
+            <Countermeasure>Strictly avoid the use of 'broken', weak, or novel algorithms (those that have not undergone extensive evaluation by the cryptographic community at large) to protect long-term secrets.</Countermeasure>
+            <Countermeasure>Consider the use of cryptographic functions provided by the mobile operating system and where possible, leverage hardware-backed cryptographic and secure storage services.</Countermeasure>
+            <Countermeasure>Additionally, application developers are strongly encouraged to familiarize themselves with best practices for cryptography and general key management, and to integrate that knowledge early in the application design process. See NIST SP 800-57 Part 1 Revision 4, Recommendation for Key Management, Part 1 General[^244]</Countermeasure>
+            <Countermeasure>For Android developers, review guidance on the proper use of the Android Keystore System.[^245]</Countermeasure>
+            <Countermeasure>For iOS developers, review guidance on the proper use of the iOS Keychain.[^246]</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Use app vetting tools/services to detect the misuse of cryptography in mobile apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-11</ThreatID>
+        <ThreatCategory>Vulnerable Applications</ThreatCategory>
+        <Threat>Untrusted Input to Sensitive Operations</Threat>
+        
+        
+        <ExploitExamples>Team Joch vs. Android [^57]</ExploitExamples>
+        
+        <CVEExamples>CVE-2017-7005</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>When input should match one of a set of known and comparable options, use whitelisting to ensure the input is safe before applying it to security logic.</Countermeasure>
+            <Countermeasure>When whitelisting is not possible, use vetted data sanitization libraries to verify the input appears syntactically safe prior to applying it to security logic.</Countermeasure>
+            <Countermeasure>Always use fail-safe security logic in apps; if input cannot be verified to be safe (versus not identified as unsafe), reject the input and do not perform the security action.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-12</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Malicious Device Information Gathering</Threat>
+        
+        <ThreatOrigins>The Google Android Security Team's Classifications for Potentially Harmful Applications [^83]</ThreatOrigins>
+        
+        <ExploitExamples>Slembunk: An Evolving Android Trojan Family [^84]</ExploitExamples>
+        <ExploitExamples>An investigation of Chrysaor Malware on Android [^AndroidDevBlog-1]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the sideloading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Perform application vetting to identify inappropriate behaviors by apps including permission requests made by the apps</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential data collection risks associated with apps installed on devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may abuse permissions to perform data collection.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-13</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Sensitive Information Discovery via OS APIs</Threat>
+        
+        <ThreatOrigins>The Google Android Security Team's Classifications for Potentially Harmful Applications [^83]</ThreatOrigins>
+        
+        <ExploitExamples>An investigation of Chrysaor Malware on Android [^AndroidDevBlog-1]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the sideloading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Perform application vetting to identify privacy-invasive behaviors by apps.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential privacy risks associated with apps installed on devices</Countermeasure>
+            <Countermeasure>Use features such as Apple iOS Managed Apps, Android for Work, or Samsung KNOX Workspace that provide additional separation between personal apps and enterprise apps to mitigate the leakage of private information between work/personal contexts.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may violate privacy.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>Only request access to the minimal set of shared data stores (e.g., contacts, calendar), OS services (e.g. location services), and device sensors (e.g. camera, microphone) necessary for the app to provide functionality.</Countermeasure>
+            <Countermeasure>Only collect the minimal set of device or user data necessary for the app to provide functionality.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-14</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Masquerade as Legitimate Application</Threat>
+        
+        <ThreatOrigins>The Google Android Security Team's Classifications for Potentially Harmful Applications [^83]</ThreatOrigins>
+        <ThreatOrigins>Mobile Threat Protection: A Holistic Approach to Securing Mobile Data and Devices [^61]</ThreatOrigins>
+        <ThreatOrigins>Dissecting Android Malware: Characterization and Evolution [^85]</ThreatOrigins>
+        
+        <ExploitExamples>New Android Malware Family Evades Antivirus Detection by Using Popular Ad Libraries [^86]</ExploitExamples>
+        <ExploitExamples>Slembunk: An Evolving Android Trojan Family Targeting Users of Worldwide Banking Apps [^84]</ExploitExamples>
+        <ExploitExamples>Incident Response for Android and iOS [^87]</ExploitExamples>
+        <ExploitExamples>Cloned banking app stealing usernames sneaks into Google Play [^88]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the sideloading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potentially harmful apps installed on COPE or BYOD devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify potentially harmful apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>To reduce the ease of an attacker to abuse existing app functionality, only request access to the minimal set of shared data stores (e.g., contacts, calendar), OS services (e.g. location services), and device sensors (e.g. camera, microphone) necessary for the app to provide functionality.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-15</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Distribution of malicious apps by a 3rd party store</Threat>
+        
+        <ThreatOrigins>Change to sideloading apps in iOS 9 is a security win [^89]</ThreatOrigins>
+        <ThreatOrigins>Mobile Security: Threats and Countermeasures [^90]</ThreatOrigins>
+        
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Actor>
+            <Countermeasure>Enterprise</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Actor>
+            <Countermeasure>Enterprise</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Ensure iOS devices are running the latest version of iOS, as iOS 9 introduces improvements to make it more difficult for users to inadvertently install non-Apple App Store apps (e.g. apps distributed using illicitly obtained enterprise certificates).</Actor>
+            <Countermeasure>Mobile Device User</Countermeasure>
+            <Countermeasure>Enterprise</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>When the installation of apps from unofficial app stores (e.g., enterprise app stores) is necessary, use Android Verify Apps feature to identify potentially harmful apps.</Actor>
+            <Countermeasure>Mobile Device User</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>To protect against arbitrary installation of 3rd party apps, when the installation of apps from unofficial app stores (e.g., enterprise app stores) is necessary, disable the installation of 3rd party apps once installation is complete.</Actor>
+            <Countermeasure>Mobile Device User</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-16</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Premium SMS Fraud</Threat>
+        
+        <ThreatOrigins>Dissecting Android Malware: Characterization and Evolution [^85]</ThreatOrigins>
+        
+        <ExploitExamples>zSone, RogueSPPush, GGTracker malware described in Dissecting Android Malware: Characterization and Evolution [^85]</ExploitExamples>
+        <ExploitExamples>Mkero: Android malware secretly subscribes victims to premium SMS services [^94]</ExploitExamples>
+        <ExploitExamples>Chinese Android botnet 'netting millions' [^95]</ExploitExamples>
+        <ExploitExamples>Android Security 2015 Year In Review [^98]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Ensure Android devices are running a recent version of Android, as starting in Android 4.2, user confirmation is needed before apps can send premium SMSs (source: https://source.android.com/security/enhancements/enhancements42.html).</Countermeasure>
+            <Countermeasure>Perform application vetting to identify SMS fraud by apps including permission requests made by the apps.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential SMS fraud risks associated with apps installed on devices.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Ensure Android devices are running a recent version of Android, as starting in Android 4.2, user confirmation is needed before apps can send premium SMSs (source: https://source.android.com/security/enhancements/enhancements42.html).</Countermeasure>
+            <Countermeasure>Use Android Verify Apps feature to apps that attempt to abuse SMS functionality.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-17</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Intercepting SMS Messages</Threat>
+        
+        <ThreatOrigins>Dissecting Android Malware: Characterization and Evolution [^85]</ThreatOrigins>
+        
+        <ExploitExamples>New Android Trojan xBot Phishes Credit Cards and Bank Accounts, Encrypts Devices for Ransom [^96]</ExploitExamples>
+        <ExploitExamples>How Anywhere Computing Just Killed Your Phone-Based Two-Factor Authentication [^97]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Perform application vetting to identify inappropriate behaviors by apps including interception of SMS messages.</Countermeasure>
+            <Countermeasure>Avoid the use of applications that rely on SMS messages for 2-factor authentication.</Countermeasure>
+            <Countermeasure>When stronger 2-factor authentication methods are available, such as FIDO U2F tokens, educate enterprise users to avoid the use of SMS messages for configuring 2-factor authentication for enterprise applications.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data to identify apps that increase risks associated with SMS message interception.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may intercept SMS messages.</Countermeasure>
+            <Countermeasure>Avoid the use of applications that rely on SMS messages for 2-factor authentication.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>Avoid the use of SMS messages for 2-factor authentication.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-18</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Premium Service Fraud</Threat>
+        
+        <ThreatOrigins>Android Security 2015 Year In Review [^98]</ThreatOrigins>
+        
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential abuse of carrier services associated with apps installed on COPE or BYOD devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may abuse premium carrier services.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-19</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Audio or Video Surveillance</Threat>
+        
+        
+        <ExploitExamples>Malware designed to take over cameras and record audio enters Google Play [^99]</ExploitExamples>
+        <ExploitExamples>An investigation of Chrysaor Malware on Android [^AndroidDevBlog-1]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Deploy MDM solutions that support geo-fencing of BYOD devices with policies that disable device sensors (e.g., camera, microphone) when the device is being operated in sensitive locations.</Countermeasure>
+            <Countermeasure>Deploy MDM solutions for COPE devices that support disabling device sensors (e.g. camera, microphone) that can be used for recording of nearby activity.</Countermeasure>
+            <Countermeasure>Deploy MAM solutions for COPE devices that support selectively enabling device sensors (e.g. camera, microphone) for a whitelist of trusted enterprise applications that require those functionalities.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential abuse of access to device sensors associated with apps installed on COPE or BYOD devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may abuse access to sensor data to record nearby activity.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>To reduce risks of using the app, only request access to the minimal set of shared data stores (e.g., contacts, calendar), OS services (e.g. location services), and device sensors (e.g. camera, microphone) necessary for the app to provide functionality.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-2</ThreatID>
+        <ThreatCategory>Vulnerable Applications</ThreatCategory>
+        <Threat>Sensitive Information Exposure</Threat>
+        
+        
+        <ExploitExamples>Vulnerability in Skype for Android [^67]</ExploitExamples>
+        <ExploitExamples>World Writable Code Is Bad, MMMMKAY [^68]</ExploitExamples>
+        <ExploitExamples>LOOK-11-001 something [^69]</ExploitExamples>
+        
+        <CVEExamples>CVE-2011-1717</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Use app-vetting tools or services to identify insecure storage of sensitive data.</Countermeasure>
+            <Countermeasure>Consider the use of devices that support Android 7.0 and later, which enables app-level encryption in addition to block-level encryption.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Consider the use of devices that support Android 7.0 and later, which enables app-level encryption in addition to block-level encryption.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-20</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Loading Malicious Code at Runtime</Threat>
+        
+        <ThreatOrigins>Execute This! Analyzing Unsafe and Malicious Dynamic Code Loading in Android Applications [^240]</ThreatOrigins>
+        <ThreatOrigins>Jekyll on iOS: When Benign Apps Become Evil [^111]</ThreatOrigins>
+        
+        <ExploitExamples>Android Hax [^100]</ExploitExamples>
+        <ExploitExamples>Hot or Not? The Benefits and Risks of iOS Remote Hot Patching [^241]</ExploitExamples>
+        <ExploitExamples>Method Swizzling [^242]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential abuse of dynamic code execution associated with apps installed on COPE or BYOD devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify potentially harmful apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-21</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>App Vetting Misses Malicious App</Threat>
+        
+        <ThreatOrigins>Dissecting Android Malware: Characterization and Evolution [^85]</ThreatOrigins>
+        
+        
+        <CVEExamples>CVE-2015-07555</CVEExamples>
+        <CVEExamples>CVE-2016-5131</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Use app-vetting tools or services to identify untrusted apps that contain encrypted or obfuscated code.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about apps that contain encrypted or obfuscated code</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify potentially harmful apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>To mitigate your app being detected as potentially malicious, do not arbitrarily encrypt or obfuscate code.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-22</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Avoiding Uninstallation via Permissions Abuse</Threat>
+        
+        <ThreatOrigins>Android Security 2015 Year In Review [^98]</ThreatOrigins>
+        
+        
+        <CVEExamples>CVE-2017-0594</CVEExamples>
+        <CVEExamples>CVE-2017-0595</CVEExamples>
+        <CVEExamples>CVE-2017-0596</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Ensure Android devices are running a recent version of the operating system. As described at 44:20 in the Google I/O 2016 &quot;What's new in Android security&quot; (https://www.youtube.com/watch?v=XZzLjllizYs), enhancements were made in Android M or N to ensure that all device admin apps can be uninstalled.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Ensure Android devices are running a recent version of the operating system. As described at 44:20 in the Google I/O 2016 &quot;What's new in Android security&quot; (https://www.youtube.com/watch?v=XZzLjllizYs), enhancements were made in Android M or N to ensure that all device admin apps can be uninstalled.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-23</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Ransoming Assets via Device Management Abuse</Threat>
+        
+        <ThreatOrigins>Android Security 2015 Year In Review [^98]</ThreatOrigins>
+        
+        <ExploitExamples>New Android Trojan xBot Phishes Credit Cards and Bank Accounts, Encrypts Devices for Ransom [^96]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential abuse of Administrator privileges associated with apps installed on COPE or BYOD devices</Countermeasure>
+            <Countermeasure>Consider the use of devices that support Android 7.0 and later and ensuring a PIN is set. Starting in 7.0, device administrator apps can no longer change the device PIN/password when one is already set, as described in https://developer.android.com/preview/behavior-changes.html and at 44:20 of https://www.youtube.com/watch?v=XZzLjllizYs</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may abuse Administrator privileges.</Countermeasure>
+            <Countermeasure>Consider the use of devices that support Android 7.0 and later and ensuring a PIN is set. Starting in 7.0, device administrator apps can no longer change the device PIN/password when one is already set, as described in https://developer.android.com/preview/behavior-changes.html and at 44:20 of https://www.youtube.com/watch?v=XZzLjllizYs</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    <row>
+        <ThreatID>APP-24</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Covertly Track Device Location</Threat>
+        
+        <ThreatOrigins>Dissecting Android Malware: Characterization and Evolution [^85]</ThreatOrigins>
+        
+        <ExploitExamples>An investigation of Chrysaor Malware on Android [^AndroidDevBlog-1]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about potential abuse of location services associated with apps installed on COPE or BYOD devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify apps that may abuse location services.</Countermeasure>
+            <Countermeasure>When apps that require location services (e.g., map services) are not in use, use OS-provided settings to globally disable access to location services</Countermeasure>
+            <Countermeasure>When using untrusted apps that require locations services (e.g., map services), use OS-provided settings to revoke access to location services once the app is no longer in use.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+                     <row>
+        <ThreatID>APP-25</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Abusing Existing Root Access</Threat>
+        
+        
+        <ExploitExamples>How to clean up the Duh iPhone worm [^101]</ExploitExamples>
+        
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>For the lowest risk tolerance, deploy MDM or containerization solutions with policies that can detect and block access to enterprise resources by rooted/jail-broken devices.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data to detect potential abuse of rooted/jail-broken BYOD devices</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify harmful apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>To avoid launching applications that handle sensitive information on a rooted/jail-broken device, perform device integrity checking, such as using Android SafetyNet, Samsung Knox hardware-backed remote attestation, or other applicable remote attestation technologies device integrity attestation API</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+<row>
+        <ThreatID>APP-26</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Privilage Escalation via OS Vulnerability</Threat>
+        
+        <ThreatOrigins>Dissecting Android Malware: Characterization and Evolution [^85]</ThreatOrigins>
+        
+        
+        <CVEExamples>CVE-2017-2398</CVEExamples>
+        <CVEExamples>CVE-2017-2401</CVEExamples>
+        <CVEExamples>CVE-2017-2440</CVEExamples>
+        <CVEExamples>CVE-2017-2451</CVEExamples>
+        <CVEExamples>CVE-2017-2456</CVEExamples>
+        <CVEExamples>CVE-2017-2472</CVEExamples>
+        <CVEExamples>CVE-2017-2473</CVEExamples>
+        <CVEExamples>CVE-2017-2474</CVEExamples>
+        <CVEExamples>CVE-2017-2478</CVEExamples>
+        <CVEExamples>CVE-2017-2482</CVEExamples>
+        <CVEExamples>CVE-2017-2483</CVEExamples>
+        <CVEExamples>CVE-2017-2490</CVEExamples>
+        <CVEExamples>CVE-2017-0593</CVEExamples>
+        <CVEExamples>CVE-2017-0598</CVEExamples>
+        <CVEExamples>CVE-2017-0601</CVEExamples>
+        <CVEExamples>CVE-2016-7056</CVEExamples>
+        <CVEExamples>CVE-2016-10274</CVEExamples>
+        <CVEExamples>CVE-2016-10275</CVEExamples>
+        <CVEExamples>CVE-2016-10276</CVEExamples>
+        <CVEExamples>CVE-2016-9794</CVEExamples>
+        <CVEExamples>CVE-2017-0331</CVEExamples>
+        <CVEExamples>CVE-2017-0604</CVEExamples>
+        <CVEExamples>CVE-2017-0605</CVEExamples>
+        <CVEExamples>CVE-2016-10280</CVEExamples>
+        <CVEExamples>CVE-2016-10281</CVEExamples>
+        <CVEExamples>CVE-2016-10282</CVEExamples>
+        <CVEExamples>CVE-2016-10283</CVEExamples>
+        <CVEExamples>CVE-2016-10284</CVEExamples>
+        <CVEExamples>CVE-2016-10285</CVEExamples>
+        <CVEExamples>CVE-2016-10286</CVEExamples>
+        <CVEExamples>CVE-2015-9004</CVEExamples>
+        <CVEExamples>CVE-2016-10287</CVEExamples>
+        <CVEExamples>CVE-2017-0606</CVEExamples>
+        <CVEExamples>CVE-2016-5860</CVEExamples>
+        <CVEExamples>CVE-2016-5867</CVEExamples>
+        <CVEExamples>CVE-2017-0607</CVEExamples>
+        <CVEExamples>CVE-2017-0608</CVEExamples>
+        <CVEExamples>CVE-2017-0609</CVEExamples>
+        <CVEExamples>CVE-2016-5859</CVEExamples>
+        <CVEExamples>CVE-2017-0610</CVEExamples>
+        <CVEExamples>CVE-2017-0611</CVEExamples>
+        <CVEExamples>CVE-2016-5853</CVEExamples>
+        <CVEExamples>CVE-2016-10288</CVEExamples>
+        <CVEExamples>CVE-2016-10289</CVEExamples>
+        <CVEExamples>CVE-2016-10290</CVEExamples>
+        <CVEExamples>CVE-2017-0465</CVEExamples>
+        <CVEExamples>CVE-2017-0612</CVEExamples>
+        <CVEExamples>CVE-2017-0613</CVEExamples>
+        <CVEExamples>CVE-2017-0614</CVEExamples>
+        <CVEExamples>CVE-2017-0616</CVEExamples>
+        <CVEExamples>CVE-2017-0618</CVEExamples>
+        <CVEExamples>CVE-2017-0619</CVEExamples>
+        <CVEExamples>CVE-2017-0620</CVEExamples>
+        <CVEExamples>CVE-2016-5862</CVEExamples>
+        <CVEExamples>CVE-2017-0621</CVEExamples>
+        <CVEExamples>CVE-2016-5868</CVEExamples>
+        <CVEExamples>CVE-2017-0622</CVEExamples>
+        <CVEExamples>CVE-2017-0623</CVEExamples>
+        <CVEExamples>CVE-2017-0624</CVEExamples>
+        <CVEExamples>CVE-2017-0625</CVEExamples>
+        <CVEExamples>CVE-2017-0626</CVEExamples>
+        <CVEExamples>CVE-2017-0627</CVEExamples>
+        <CVEExamples>CVE-2016-10293</CVEExamples>
+        <CVEExamples>CVE-2016-10294</CVEExamples>
+        <CVEExamples>CVE-2016-10295</CVEExamples>
+        <CVEExamples>CVE-2016-10296</CVEExamples>
+        <CVEExamples>CVE-2017-0628</CVEExamples>
+        <CVEExamples>CVE-2017-0629</CVEExamples>
+        <CVEExamples>CVE-2017-0630</CVEExamples>
+        <CVEExamples>CVE-2016-5858</CVEExamples>
+        <CVEExamples>CVE-2017-0631</CVEExamples>
+        <CVEExamples>CVE-2016-5347</CVEExamples>
+        <CVEExamples>CVE-2016-5854</CVEExamples>
+        <CVEExamples>CVE-2016-5855</CVEExamples>
+        <CVEExamples>CVE-2017-0632</CVEExamples>
+        <CVEExamples>CVE-2017-0633</CVEExamples>
+        <CVEExamples>CVE-2017-0634</CVEExamples>
+        <CVEExamples>CVE-2017-2522</CVEExamples>
+        <CVEExamples>CVE-2017-2523</CVEExamples>
+        <CVEExamples>CVE-2017-2497</CVEExamples>
+        <CVEExamples>CVE-2017-6981</CVEExamples>
+        <CVEExamples>CVE-2017-6979</CVEExamples>
+        <CVEExamples>CVE-2017-2051</CVEExamples>
+        <CVEExamples>CVE-2017-2507</CVEExamples>
+        <CVEExamples>CVE-2017-6987</CVEExamples>
+        <CVEExamples>CVE-2017-7004</CVEExamples>
+        <CVEExamples>CVE-2017-2513</CVEExamples>
+        <CVEExamples>CVE-2017-2518</CVEExamples>
+        <CVEExamples>CVE-2017-2520</CVEExamples>
+        <CVEExamples>CVE-2017-2519</CVEExamples>
+        <CVEExamples>CVE-2017-6983</CVEExamples>
+        <CVEExamples>CVE-2017-6991</CVEExamples>
+        <CVEExamples>CVE-2017-7000</CVEExamples>
+        <CVEExamples>CVE-2017-7001</CVEExamples>
+        <CVEExamples>CVE-2017-7002</CVEExamples>
+        <CVEExamples>CVE-2017-2524</CVEExamples>
+        <CVEExamples>CVE-2017-2496</CVEExamples>
+        <CVEExamples>CVE-2017-2505</CVEExamples>
+        <CVEExamples>CVE-2017-2506</CVEExamples>
+        <CVEExamples>CVE-2017-2514</CVEExamples>
+        <CVEExamples>CVE-2017-2515</CVEExamples>
+        <CVEExamples>CVE-2017-2521</CVEExamples>
+        <CVEExamples>CVE-2017-2525</CVEExamples>
+        <CVEExamples>CVE-2017-2526</CVEExamples>
+        <CVEExamples>CVE-2017-2530</CVEExamples>
+        <CVEExamples>CVE-2017-2531</CVEExamples>
+        <CVEExamples>CVE-2017-2538</CVEExamples>
+        <CVEExamples>CVE-2017-2539</CVEExamples>
+        <CVEExamples>CVE-2017-2544</CVEExamples>
+        <CVEExamples>CVE-2017-2547</CVEExamples>
+        <CVEExamples>CVE-2017-6980</CVEExamples>
+        <CVEExamples>CVE-2017-6984</CVEExamples>
+        <CVEExamples>CVE-2017-2504</CVEExamples>
+        <CVEExamples>CVE-2017-2508</CVEExamples>
+        <CVEExamples>CVE-2017-2510</CVEExamples>
+        <CVEExamples>CVE-2017-2528</CVEExamples>
+        <CVEExamples>CVE-2017-2536</CVEExamples>
+        <CVEExamples>CVE-2017-2549</CVEExamples>
+        <CVEExamples>CVE-2017-2499</CVEExamples>
+        <CVEExamples>CVE-2016-7056</CVEExamples>
+        <CVEExamples>CVE-2017-0603</CVEExamples>
+        <CVEExamples>CVE-2016-10294</CVEExamples>
+        <CVEExamples>CVE-2017-0615</CVEExamples>
+        <CVEExamples>CVE-2017-0617</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data to identify apps that exploit the OS to achieve privilege escalation.</Countermeasure>
+            <Countermeasure>Use app-vetting tools or services to identify apps that exploit the OS to achieve privilege escalation.</Countermeasure>
+            <Countermeasure>To limit the opportunity for malicious apps to exploit known vulnerabilities, ensure timely installation of security updates.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use the Android Verify Apps feature to identify potentially harmful apps.</Countermeasure>
+            <Countermeasure>To limit the opportunity for malicious apps to exploit known vulnerabilities, ensure timely installation of security updates.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+    
+    <row>
+        <ThreatID>APP-27</ThreatID>
+        <ThreatCategory>Malicious or privacy-invasive application</ThreatCategory>
+        <Threat>Persistance via Writing to System Partition</Threat>
+        
+        
+        <ExploitExamples>Brain Test re-emerges: 13 apps found in Google Play [^102]</ExploitExamples>
+        
+        <CVEExamples>CVE-2016-10277</CVEExamples>
+        
+        <PossibleCountermeasures>
+            <Actor>Enterprise</Actor>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the side-loading of apps, which may bypass security checks on the app.</Countermeasure>
+            <Countermeasure>Deploy MAM or MDM solutions with policies that prohibit the installation of apps from 3rd party (unofficial) app stores.</Countermeasure>
+            <Countermeasure>Use application threat intelligence data about apps that may achieve malicious persistence</Countermeasure>
+            <Countermeasure>Use app-vetting tools or services to identify apps that exploit the underlying OS to achieve malicious persistence.</Countermeasure>
+            <Countermeasure>Deploy MDM solutions that require successful boot attestation prior to granting access to enterprise resources.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile Device User</Actor>
+            <Countermeasure>Use Android Verify Apps feature to identify potentially harmful apps.</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+        <PossibleCountermeasures>
+            <Actor>Mobile App Developer</Actor>
+            <Countermeasure>To avoid executing apps that process sensitve information while low-level malware is present on the device, perform device integrity checking within enterprise applications, such as use of Android SafetyNet, Samsung Knox hardware-backed remote attestation, or other applicable remote attestation technologies device integrity attestation API</Countermeasure>
+            
+        </PossibleCountermeasures>
+        
+    </row>
+
+</root>

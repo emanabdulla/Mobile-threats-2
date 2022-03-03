@@ -1,0 +1,133 @@
+## This file was created by Tawny-OWL
+## It should not be edited by hand
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: pattern: <http://www.w3id.org/ontolink/pattern.owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: threats: <urn:absolute:ab1e432d-e2a4-4aaf-af7e-3aa920d0636f#threats#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <urn:absolute:ab1e432d-e2a4-4aaf-af7e-3aa920d0636f#threats>
+
+Import: <http://www.purl.org/ontolink/tawny>
+
+Annotations: 
+    <http://www.purl.org/ontolink/tawny#name> "threats"@en
+
+AnnotationProperty: <http://www.purl.org/ontolink/tawny#name>
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Class: threats:APIs
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Sensitive Information Discovery via OS APIs"@en
+    
+    
+Class: threats:Abuse
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Ransoming Assets via Device Management Abuse"@en
+    
+    
+Class: threats:App
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "App Vetting Misses Malicious App"@en,
+        rdfs:comment " to creat classes for threats"@en
+    
+    
+Class: threats:Application
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Masquerade as Legitimate Application"@en
+    
+    
+Class: threats:Authentication
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "Man-in-the-middle Attack on Server Authentication"@en,
+        rdfs:comment " to creat classes for threats"@en
+    
+    
+Class: threats:Cryptography
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "Poorly Implemented Cryptography"@en,
+        rdfs:comment " to creat classes for threats"@en
+    
+    
+Class: threats:Exposure
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Sensitive Information Exposure"@en
+    
+    
+Class: threats:Fraud
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Premium SMS Fraud"@en
+    
+    
+Class: threats:Gathering
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Malicious Device Information Gathering"@en
+    
+    
+Class: threats:Messages
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "Intercepting SMS Messages"@en,
+        rdfs:comment " to creat classes for threats"@en
+    
+    
+Class: threats:Operations
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Untrusted Input to Sensitive Operations"@en
+    
+    
+Class: threats:Runtime
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "Loading Malicious Code at Runtime"@en,
+        rdfs:comment " to creat classes for threats"@en
+    
+    
+Class: threats:Surveillance
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Audio or Video Surveillance"@en
+    
+    
+Class: threats:Traffic
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "Eavesdropping on Unencryted App Traffic"@en,
+        rdfs:comment " to creat classes for threats"@en
+    
+    
+Class: threats:store
+
+    Annotations: 
+        rdfs:comment " to creat classes for threats"@en,
+        <http://www.purl.org/ontolink/tawny#name> "Distribution of malicious apps by a 3rd party store"@en
+    
+    
