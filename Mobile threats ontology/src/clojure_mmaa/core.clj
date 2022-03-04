@@ -1,21 +1,13 @@
 (ns Clojure-mmaa
-(:use [tawny owl pattern util])
+  (:use [tawny owl pattern util])
   (:require [tawny.owl :refer :all]
             [tawny.english]
             [tawny.reasoner :as r]))
-
-
-(require '[clojure.xml :as xml]
-         '[clojure.java.io :as io]
-
-'[clojure.zip :as zip])
-
-
+  (require '[clojure.xml :as xml]
+           '[clojure.java.io :as io]
+           '[clojure.zip :as zip])
 
 (defn zip-str [s]  ((xml/parse (io/as-file s)) ))
-
-
-
 (defn zip-str [s]
   (zip/xml-zip
    (xml/parse (io/as-file s))))
@@ -84,13 +76,12 @@
      (mapcat  :content) )
 
 
-
 (save-ontology "ontology.omn" :omn)
 (save-ontology "ontology2.owl" :owl)
 
 ;;parse from file to internal xml representation
 ;; (def x  (zip-str "mtc-data.xml")  )
-(x)
+
 ;; => #'Clojure-mmaa/x
 ;; (nth x)
 
