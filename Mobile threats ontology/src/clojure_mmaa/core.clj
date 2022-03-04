@@ -19,7 +19,32 @@
 (defn threat-product? [node]
   (some-> node :tag (= :Threat)))
 
-(defontology threats)
+(defontology threats
+:comment "An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.")
+
+;;OWL CLASSES
+
+(defclass Threat
+  :comment "The threat is a potential negative action or event facilitated by a vulnerability that results in an unwanted impact on a computer system, application and mobile devices.")
+(defclass ThreatCategory)
+
+(deftier ThreatCategory 
+   [
+   Application 
+   Authentication 
+   Cellular 
+   Ecosystem 
+   EMM
+   GPS 
+   LAN&PAN 
+   Payment 
+   PhysicalAccess 
+   Privacy 
+   Stack 
+   SupplyChain 
+   ]
+  :functional false
+)
 
 (def claz-names
 
