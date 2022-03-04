@@ -1,6 +1,5 @@
 # clojure-mmaa
-
-A Clojure library designed to ... well, that part is up to you.
+A Clojure project to model mobile threats ontologically, using Tawny-OWL.
 
 ## Usage
 
