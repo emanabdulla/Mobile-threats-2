@@ -41,6 +41,15 @@
   :functional false
 )
 
+;;; annotation properties
+
+(defaproperty Id)
+(def id (annotator id))
+(defaproperty Description)
+(def Description  (annotator Description))
+(defaproperty CVEExamples)
+(def CVEExamples (annotator CVEExamples))
+
 ;; function to parse Xml
 (def xmlData (-> "mtc-datt.xml" io/file xml/parse zip/xml-zip))
 
@@ -83,12 +92,9 @@
 (defn threat-product? [node]
   (some-> node :tag (= :Threat)))
 
-
-
 (defn row-product? [node]
   (some-> node :tag (= :row)))
 (def x
-
 
 (->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
      io/resource
@@ -98,11 +104,7 @@
      (filter row-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
      (mapcat :content))) ;store the content of the filtered tag and display it
 
-
-
-
 (def claz-names
-
 
 (->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
      io/resource
@@ -112,18 +114,16 @@
      (filter threat-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
      (mapcat :content))) ;store the content of the filtered tag and display it
 
+;; define function to create classes 
 (defn createclass [cls]
 (intern-owl-string cls 
 (owl-class cls
-:comment " to creat classes for threats")
-
-))
-
+:comment " to creat classes for threats")))
 (createclass  "eman" )
 (createclass (first claz-names))
  (map createclass claz-names)
 
-
+; function to filter the provided tag in the argument of = function
 (defn threatID-product? [node]
   (some-> node :tag (= :ThreatID)))
 
@@ -248,5 +248,4 @@ threat=node.content)))
 (creatclass [id category threat])
 construct-class = 0)
 
-clojure jason 
-red jason in clojure 
+ 
