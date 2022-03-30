@@ -4,17 +4,17 @@
             [tawny.english]
             [tawny.reasoner :as r]))
 
-  (require '[clojure.xml :as xml]
-           '[clojure.java.io :as io]
-           '[clojure.zip :as zip]
-           '[clojure.data.zip.xml :as zip-xml]
-           '[clojure.data.zip :as zf]
-           '[clojure.string :as str])
+(require '[clojure.xml :as xml]
+         '[clojure.java.io :as io]
+         '[clojure.zip :as zip]
+         '[clojure.data.zip.xml :as zip-xml]
+         '[clojure.data.zip :as zf]
+         '[clojure.string :as str])
 
 
 ;; define the ontology
 (defontology threats
-:comment "An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.")
+  :comment "An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.")
 
 ;;OWL CLASSES
 
@@ -24,7 +24,7 @@
 
 ;; define Categories
 (deftier ThreatCategory 
-   [
+  [
    Application 
    Authentication 
    Cellular 
@@ -38,8 +38,7 @@
    Stack 
    SupplyChain 
    ]
-  :functional false
-)
+  :functional false)
 
 (as-disjoint-subclasses
  Application
@@ -73,51 +72,36 @@
    :annotation
           (annotation Id (first (zip-xml/xml-> m :ThreatID zip-xml/text)))
           (map CVEExamples (zip-xml/xml-> m :CVEExamples zip-xml/text))
-          (map Description (zip-xml/xml-> m :ThreatCategory zip-xml/text)))
-                                 )
-)
+          (map Description (zip-xml/xml-> m :ThreatCategory zip-xml/text))) ) )
 
 
 
 
 ;; another functions to parse XML by extract different content
-;; (def xf (zip-xml/xml-> xmlData :row :Threat zip-xml/text ))
- ;; xf
-; (def x)
- ;x
-; (defclass symbol (first xf))
 
-;(def xmlzipper (clojure.zip/xml-zip (clojure.xml/parse "mtc-datt.xml")))
-;(clojure.zip/children xmlzipper)
+;; (def xf (zip-xml/xml-> xmlData :row :Threat zip-xml/text ))
+;; xf
+                                        ; (def x)
+                                        ;x
+                                        ; (defclass symbol (first xf))
+
+                                        ;(def xmlzipper (clojure.zip/xml-zip (clojure.xml/parse "mtc-datt.xml")))
+                                        ;(clojure.zip/children xmlzipper)
 ;; (defn get-names [doc]
- 
-  ;; (->> (zip-xml/xml-> doc :row)
-      
-       ;; (map (juxt #(zip-xml/xml-> % :row zf/children  zip-xml/text)))))
- 
+
+;; (->> (zip-xml/xml-> doc :row)
+
+;; (map (juxt #(zip-xml/xml-> % :row zf/children  zip-xml/text)))))
+
 ;; (def xmld1
 ;; (get-names xmlData))
 ;; (get-names xmlData)
 
- ;; (->> (get-in xmlData [""])  
- ;; (map #(str "demo-data.xml" (get % "ThreatID") "/" (get % "Threat"))))
+;; (->> (get-in xmlData [""])  
+;; (map #(str "demo-data.xml" (get % "ThreatID") "/" (get % "Threat"))))
 
 ;; (def xmld  (for [m (zip-xml/xml-> xmlData :row zf/children)]
 ;; [(keyword :content) (zip-xml/text m)]))
-
-
-
-
-
-
-
-;; (for [m (zip-xml/xml-> xmlData :row)]
-  ;; (intern-owl-string (first (zip-xml/xml-> m :Threat zip-xml/text))
-        ;; (owl-class (first (zip-xml/xml-> m :Threat zip-xml/text))
-         ;; :super MaliciousOrprivacy-invasiveApplication
-             ;; :annotation
-             ;; (annotation Id (first (zip-xml/xml-> m :ThreatID zip-xml/text)))
-             ;; (map CVEExamples  (zip-xml/xml-> m :CVEExamples zip-xml/text ))))
 
 
 ;;different function to parse
@@ -129,7 +113,7 @@
 
 ;; => #'Clojure-mmaa/x(x)
 
-; function to filter the provided tag in the argument of = function
+                                        ; function to filter the provided tag in the argument of = function
 (defn threat-product? [node]
   (some-> node :tag (= :Threat)))
 
@@ -137,34 +121,34 @@
   (some-> node :tag (= :row)))
 (def x
 
-(->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
-     io/resource
-     io/file ;input xml will be read
-     xml/parse ; xml wil be parse
-     xml-seq ;result of xml/parse will be parse to xml-seq to arrange it in sequence
-     (filter row-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
-     (mapcat :content))) ;store the content of the filtered tag and display it
+  (->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
+      io/resource
+      io/file ;input xml will be read
+      xml/parse ; xml wil be parse
+      xml-seq ;result of xml/parse will be parse to xml-seq to arrange it in sequence
+      (filter row-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
+      (mapcat :content))) ;store the content of the filtered tag and display it
 
 (def claz-names
 
-(->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
-     io/resource
-     io/file ;input xml will be read
-     xml/parse ; xml wil be parse
-     xml-seq ;result of xml/parse will be parse to xml-seq to arrange it in sequence
-     (filter threat-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
-     (mapcat :content))) ;store the content of the filtered tag and display it
+  (->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
+      io/resource
+      io/file ;input xml will be read
+      xml/parse ; xml wil be parse
+      xml-seq ;result of xml/parse will be parse to xml-seq to arrange it in sequence
+      (filter threat-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
+      (mapcat :content))) ;store the content of the filtered tag and display it
 
 ;; define function to create classes 
 (defn createclass [cls]
-(intern-owl-string cls 
-(owl-class cls
-:comment " to creat classes for threats")))
+  (intern-owl-string cls 
+                     (owl-class cls
+                                :comment " to creat classes for threats")))
 (createclass  "eman" )
 (createclass (first claz-names))
- (map createclass claz-names)
+(map createclass claz-names)
 
-; function to filter the provided tag in the argument of = function
+                                        ; function to filter the provided tag in the argument of = function
 (defn threatID-product? [node]
   (some-> node :tag (= :ThreatID)))
 
@@ -244,15 +228,6 @@
 ;; (def class-id (-> class-name zip/down))
 
 
-
-
-
-
-
-;
-;; (defcalss Application
-  ;; :annotation (id ))
-
 ;; (defn node-tag? [node]
   ;; (some-> node :tag (= :Threat)))
 
@@ -266,27 +241,27 @@
 
 ;; )
 
-(def construct-class?
-0)
-(loop [node] in x 
+;; (def construct-class?
+;; 0)
+;; (loop [node] in x 
 
 
-(if node.tag== "threatID"
-id=node.content
-(if construct-class == 1 
-(creatclass [id category threat])
-construct-class = 0
-)
+;; (if node.tag== "threatID"
+;; id=node.content
+;; (if construct-class == 1 
+;; (creatclass [id category threat])
+;; construct-class = 0
+;; )
 
 
-construct-class =1)
-(elseif node.tag== "threatCategory"
-category=node.content)
-((elseif node.tag== "threat"
-threat=node.content)))
+;; construct-class =1)
+;; (elseif node.tag== "threatCategory"
+;; category=node.content)
+;; ((elseif node.tag== "threat"
+;; threat=node.content)))
 
-(if construct-class == 1 
-(creatclass [id category threat])
-construct-class = 0)
+;; (if construct-class == 1 
+;; (creatclass [id category threat])
+;; construct-class = 0)
 
  
