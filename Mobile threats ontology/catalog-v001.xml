@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1646273076781" name="urn:absolute:7409004c-544a-4a6c-b345-d940bca25bf4#threats" uri="ontology2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1646849444032" name="urn:absolute:1f294a11-fe3d-4423-91bb-abc17a64fc92#threats" uri="ontology2.owl"/>
     </group>
 </catalog>

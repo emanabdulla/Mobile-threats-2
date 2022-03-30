@@ -4,20 +4,27 @@ Prefix: owl: <http://www.w3.org/2002/07/owl#>
 Prefix: pattern: <http://www.w3id.org/ontolink/pattern.owl#>
 Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-Prefix: threats: <urn:absolute:ab1e432d-e2a4-4aaf-af7e-3aa920d0636f#threats#>
+Prefix: threats: <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#>
 Prefix: xml: <http://www.w3.org/XML/1998/namespace>
 Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
 
-Ontology: <urn:absolute:ab1e432d-e2a4-4aaf-af7e-3aa920d0636f#threats>
+Ontology: <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats>
 
 Import: <http://www.purl.org/ontolink/tawny>
 
 Annotations: 
-    <http://www.purl.org/ontolink/tawny#name> "threats"@en
+    <http://www.purl.org/ontolink/tawny#name> "threats"@en,
+    rdfs:comment "An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems."@en
 
 AnnotationProperty: <http://www.purl.org/ontolink/tawny#name>
+
+    
+AnnotationProperty: pattern:facetvalue
+
+    
+AnnotationProperty: pattern:inpattern
 
     
 AnnotationProperty: rdfs:comment
@@ -26,95 +33,163 @@ AnnotationProperty: rdfs:comment
 Datatype: rdf:PlainLiteral
 
     
-Class: threats:APIs
+ObjectProperty: threats:hasThreatCategory
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Sensitive Information Discovery via OS APIs"@en
+        pattern:inpattern _:genid1,
+        <http://www.purl.org/ontolink/tawny#name> "hasThreatCategory"@en
     
-    
-Class: threats:Abuse
-
-    Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Ransoming Assets via Device Management Abuse"@en
-    
-    
-Class: threats:App
-
-    Annotations: 
-        <http://www.purl.org/ontolink/tawny#name> "App Vetting Misses Malicious App"@en,
-        rdfs:comment " to creat classes for threats"@en
+    Range: 
+        threats:ThreatCategory
     
     
 Class: threats:Application
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Masquerade as Legitimate Application"@en
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        <http://www.purl.org/ontolink/tawny#name> "Application"@en,
+        pattern:inpattern _:genid1
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
 Class: threats:Authentication
 
     Annotations: 
-        <http://www.purl.org/ontolink/tawny#name> "Man-in-the-middle Attack on Server Authentication"@en,
-        rdfs:comment " to creat classes for threats"@en
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        pattern:inpattern _:genid1,
+        <http://www.purl.org/ontolink/tawny#name> "Authentication"@en
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Cryptography
+Class: threats:Cellular
 
     Annotations: 
-        <http://www.purl.org/ontolink/tawny#name> "Poorly Implemented Cryptography"@en,
-        rdfs:comment " to creat classes for threats"@en
+        pattern:inpattern _:genid1,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        <http://www.purl.org/ontolink/tawny#name> "Cellular"@en
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Exposure
+Class: threats:EMM
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Sensitive Information Exposure"@en
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        pattern:inpattern _:genid1,
+        <http://www.purl.org/ontolink/tawny#name> "EMM"@en
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Fraud
+Class: threats:Ecosystem
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Premium SMS Fraud"@en
+        <http://www.purl.org/ontolink/tawny#name> "Ecosystem"@en,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        pattern:inpattern _:genid1
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Gathering
+Class: threats:GPS
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Malicious Device Information Gathering"@en
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        <http://www.purl.org/ontolink/tawny#name> "GPS"@en,
+        pattern:inpattern _:genid1
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Messages
+Class: threats:PAN
 
     Annotations: 
-        <http://www.purl.org/ontolink/tawny#name> "Intercepting SMS Messages"@en,
-        rdfs:comment " to creat classes for threats"@en
+        <http://www.purl.org/ontolink/tawny#name> "LAN&PAN"@en,
+        pattern:inpattern _:genid1,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Operations
+Class: threats:Payment
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Untrusted Input to Sensitive Operations"@en
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        <http://www.purl.org/ontolink/tawny#name> "Payment"@en,
+        pattern:inpattern _:genid1
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Runtime
+Class: threats:PhysicalAccess
 
     Annotations: 
-        <http://www.purl.org/ontolink/tawny#name> "Loading Malicious Code at Runtime"@en,
-        rdfs:comment " to creat classes for threats"@en
+        <http://www.purl.org/ontolink/tawny#name> "PhysicalAccess"@en,
+        pattern:inpattern _:genid1,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>
+    
+    SubClassOf: 
+        threats:ThreatCategory
     
     
-Class: threats:Surveillance
+Class: threats:Privacy
 
     Annotations: 
-        rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Audio or Video Surveillance"@en
+        <http://www.purl.org/ontolink/tawny#name> "Privacy"@en,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>,
+        pattern:inpattern _:genid1
+    
+    SubClassOf: 
+        threats:ThreatCategory
+    
+    
+Class: threats:Stack
+
+    Annotations: 
+        pattern:inpattern _:genid1,
+        <http://www.purl.org/ontolink/tawny#name> "Stack"@en,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>
+    
+    SubClassOf: 
+        threats:ThreatCategory
+    
+    
+Class: threats:SupplyChain
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "SupplyChain"@en,
+        pattern:inpattern _:genid1,
+        pattern:facetvalue <urn:absolute:4bb87a39-e80e-4395-a1a7-6104c2ba0af8#threats#hasThreatCategory>
+    
+    SubClassOf: 
+        threats:ThreatCategory
+    
+    
+Class: threats:Threat
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "Threat"@en,
+        rdfs:comment "The threat is a potential negative action or event facilitated by a vulnerability that results in an unwanted impact on a computer system, application and mobile devices."@en
+    
+    
+Class: threats:ThreatCategory
+
+    Annotations: 
+        <http://www.purl.org/ontolink/tawny#name> "ThreatCategory"@en,
+        pattern:inpattern _:genid1
+    
+    EquivalentTo: 
+        threats:Application or threats:Authentication or threats:Cellular or threats:EMM or threats:Ecosystem or threats:GPS or threats:Payment or threats:PhysicalAccess or threats:Privacy or threats:Stack or threats:SupplyChain or threats:PAN
     
     
 Class: threats:Traffic
@@ -124,10 +199,16 @@ Class: threats:Traffic
         rdfs:comment " to creat classes for threats"@en
     
     
-Class: threats:store
+Class: threats:eman
 
     Annotations: 
         rdfs:comment " to creat classes for threats"@en,
-        <http://www.purl.org/ontolink/tawny#name> "Distribution of malicious apps by a 3rd party store"@en
+        <http://www.purl.org/ontolink/tawny#name> "eman"@en
     
     
+Individual: _:genid1
+
+    
+DisjointClasses: 
+    threats:Application,threats:Authentication,threats:Cellular,threats:EMM,threats:Ecosystem,threats:GPS,threats:Payment,threats:PhysicalAccess,threats:Privacy,threats:Stack,threats:SupplyChain,threats:PAN
+

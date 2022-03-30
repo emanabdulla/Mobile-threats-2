@@ -3,9 +3,15 @@
   (:require [tawny.owl :refer :all]
             [tawny.english]
             [tawny.reasoner :as r]))
+
   (require '[clojure.xml :as xml]
            '[clojure.java.io :as io]
-           '[clojure.zip :as zip])
+           '[clojure.zip :as zip]
+           '[clojure.data.zip.xml :as zip-xml]
+           '[clojure.data.zip :as zf]
+           '[clojure.string :as str]
+)
+
 
 (defn zip-str [s]  ((xml/parse (io/as-file s)) ))
 (defn zip-str [s]
@@ -13,6 +19,7 @@
    (xml/parse (io/as-file s))))
 
 (def x  (zip-str "mtc-data.xml")  )
+
 ;; => #'Clojure-mmaa/x(x)
 
 ; function to filter the provided tag in the argument of = function
@@ -46,6 +53,22 @@
   :functional false
 )
 
+(defn row-product? [node]
+  (some-> node :tag (= :row)))
+(def x
+
+
+(->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
+     io/resource
+     io/file ;input xml will be read
+     xml/parse ; xml wil be parse
+     xml-seq ;result of xml/parse will be parse to xml-seq to arrange it in sequence
+     (filter row-product?) ;the result of xml-seq will be passed to our defined function which will filter the tag
+     (mapcat :content))) ;store the content of the filtered tag and display it
+
+
+
+
 (def claz-names
 
 
@@ -60,7 +83,9 @@
 (defn createclass [cls]
 (intern-owl-string cls 
 (owl-class cls
-:comment " to creat classes for threats")))
+:comment " to creat classes for threats")
+
+))
 
 (createclass  "eman" )
 (createclass (first claz-names))
@@ -167,3 +192,29 @@
       ;; (mapcat :content)
 
 ;; )
+
+(def construct-class?
+0)
+(loop [node] in x 
+
+
+(if node.tag== "threatID"
+id=node.content
+(if construct-class == 1 
+(creatclass [id category threat])
+construct-class = 0
+)
+
+
+construct-class =1)
+(elseif node.tag== "threatCategory"
+category=node.content)
+((elseif node.tag== "threat"
+threat=node.content)))
+
+(if construct-class == 1 
+(creatclass [id category threat])
+construct-class = 0)
+
+clojure jason 
+red jason in clojure 
