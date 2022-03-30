@@ -41,6 +41,14 @@
   :functional false
 )
 
+(as-disjoint-subclasses
+ Application
+ (defclass VulnerableApplications
+   :comment "This subcategory contains threats relating to discrete software vulnerabilities residing within mobile applications running atop the mobile operating system.")
+
+ (defclass MaliciousOrprivacy-invasiveApplication
+   :comment "This subcategory identifies mobile malware based threats, based in part off of Google's mobile classification taxonomy."))
+
 ;;; annotation properties
 
 (defaproperty Id)
@@ -53,8 +61,26 @@
 ;; function to parse Xml
 (def xmlData (-> "mtc-datt.xml" io/file xml/parse zip/xml-zip))
 
-;; another functions to parse XML by extract different content
+;; Function to ignore a special characters 
+(defn normalize [s]
+  (str/replace s #"[/*`]" " "))
 
+;; loop to creat classes from xml and add the annotations 
+(for [m (zip-xml/xml-> xmlData :row)]
+  (intern-owl-string (normalize(first (zip-xml/xml-> m :Threat zip-xml/text)))
+  (owl-class (normalize(first (zip-xml/xml-> m :Threat zip-xml/text)))
+   :super (if (= "VulnerableApplications" (first (zip-xml/xml-> m :ThreatCategory zip-xml/text))) VulnerableApplications MaliciousOrprivacy-invasiveApplication)
+   :annotation
+          (annotation Id (first (zip-xml/xml-> m :ThreatID zip-xml/text)))
+          (map CVEExamples (zip-xml/xml-> m :CVEExamples zip-xml/text))
+          (map Description (zip-xml/xml-> m :ThreatCategory zip-xml/text)))
+                                 )
+)
+
+
+
+
+;; another functions to parse XML by extract different content
 ;; (def xf (zip-xml/xml-> xmlData :row :Threat zip-xml/text ))
  ;; xf
 ; (def x)
@@ -78,6 +104,21 @@
 
 ;; (def xmld  (for [m (zip-xml/xml-> xmlData :row zf/children)]
 ;; [(keyword :content) (zip-xml/text m)]))
+
+
+
+
+
+
+
+;; (for [m (zip-xml/xml-> xmlData :row)]
+  ;; (intern-owl-string (first (zip-xml/xml-> m :Threat zip-xml/text))
+        ;; (owl-class (first (zip-xml/xml-> m :Threat zip-xml/text))
+         ;; :super MaliciousOrprivacy-invasiveApplication
+             ;; :annotation
+             ;; (annotation Id (first (zip-xml/xml-> m :ThreatID zip-xml/text)))
+             ;; (map CVEExamples  (zip-xml/xml-> m :CVEExamples zip-xml/text ))))
+
 
 ;;different function to parse
 (defn zip-str [s]  ((xml/parse (io/as-file s)) ))
