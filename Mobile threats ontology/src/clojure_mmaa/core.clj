@@ -12,6 +12,35 @@
            '[clojure.string :as str])
 
 
+;; define the ontology
+(defontology threats
+:comment "An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.")
+
+;;OWL CLASSES
+
+(defclass Threat
+  :comment "The threat is a potential negative action or event facilitated by a vulnerability that results in an unwanted impact on a computer system, application and mobile devices.")
+(defclass ThreatCategory)
+
+;; define Categories
+(deftier ThreatCategory 
+   [
+   Application 
+   Authentication 
+   Cellular 
+   Ecosystem 
+   EMM
+   GPS 
+   LAN&PAN 
+   Payment 
+   PhysicalAccess 
+   Privacy 
+   Stack 
+   SupplyChain 
+   ]
+  :functional false
+)
+
 ;; function to parse Xml
 (def xmlData (-> "mtc-datt.xml" io/file xml/parse zip/xml-zip))
 
@@ -41,12 +70,11 @@
 ;; (def xmld  (for [m (zip-xml/xml-> xmlData :row zf/children)]
 ;; [(keyword :content) (zip-xml/text m)]))
 
-
+;;different function to parse
 (defn zip-str [s]  ((xml/parse (io/as-file s)) ))
 (defn zip-str [s]
   (zip/xml-zip
    (xml/parse (io/as-file s))))
-
 (def x  (zip-str "mtc-data.xml")  )
 
 ;; => #'Clojure-mmaa/x(x)
@@ -55,32 +83,7 @@
 (defn threat-product? [node]
   (some-> node :tag (= :Threat)))
 
-(defontology threats
-:comment "An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.")
 
-;;OWL CLASSES
-
-(defclass Threat
-  :comment "The threat is a potential negative action or event facilitated by a vulnerability that results in an unwanted impact on a computer system, application and mobile devices.")
-(defclass ThreatCategory)
-
-(deftier ThreatCategory 
-   [
-   Application 
-   Authentication 
-   Cellular 
-   Ecosystem 
-   EMM
-   GPS 
-   LAN&PAN 
-   Payment 
-   PhysicalAccess 
-   Privacy 
-   Stack 
-   SupplyChain 
-   ]
-  :functional false
-)
 
 (defn row-product? [node]
   (some-> node :tag (= :row)))
