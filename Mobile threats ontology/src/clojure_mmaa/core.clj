@@ -9,8 +9,37 @@
            '[clojure.zip :as zip]
            '[clojure.data.zip.xml :as zip-xml]
            '[clojure.data.zip :as zf]
-           '[clojure.string :as str]
-)
+           '[clojure.string :as str])
+
+
+;; function to parse Xml
+(def xmlData (-> "mtc-datt.xml" io/file xml/parse zip/xml-zip))
+
+;; another functions to parse XML by extract different content
+
+;; (def xf (zip-xml/xml-> xmlData :row :Threat zip-xml/text ))
+ ;; xf
+; (def x)
+ ;x
+; (defclass symbol (first xf))
+
+;(def xmlzipper (clojure.zip/xml-zip (clojure.xml/parse "mtc-datt.xml")))
+;(clojure.zip/children xmlzipper)
+;; (defn get-names [doc]
+ 
+  ;; (->> (zip-xml/xml-> doc :row)
+      
+       ;; (map (juxt #(zip-xml/xml-> % :row zf/children  zip-xml/text)))))
+ 
+;; (def xmld1
+;; (get-names xmlData))
+;; (get-names xmlData)
+
+ ;; (->> (get-in xmlData [""])  
+ ;; (map #(str "demo-data.xml" (get % "ThreatID") "/" (get % "Threat"))))
+
+;; (def xmld  (for [m (zip-xml/xml-> xmlData :row zf/children)]
+;; [(keyword :content) (zip-xml/text m)]))
 
 
 (defn zip-str [s]  ((xml/parse (io/as-file s)) ))
