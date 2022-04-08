@@ -11,3 +11,9 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
+*.omn
+/.lein-failures
+.DS_Store
+.DS_Store?
+._*
+**/.DS_Store
