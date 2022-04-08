@@ -57,8 +57,18 @@
 (defaproperty CVEExamples)
 (def CVEExamples (annotator CVEExamples))
 
+(defaproperty ThreatCategory)
+(def ThreatCategory (annotator ThreatCategory))
+(defaproperty ThreatOrigin)
+(def ThreatOrigin (annotator ThreatOrigin))
+
+(defaproperty ExploitExamples )
+(def ExploitExamples (annotator ExploitExamples))
+
+
+
 ;; function to parse Xml
-(def xmlData (-> "mtc-datt.xml" io/file xml/parse zip/xml-zip))
+(def xmlData (-> "mtc-data.xml" io/file xml/parse zip/xml-zip))
 
 ;; Function to ignore a special characters 
 (defn normalize [s]
@@ -72,8 +82,14 @@
    :annotation
           (annotation Id (first (zip-xml/xml-> m :ThreatID zip-xml/text)))
           (map CVEExamples (zip-xml/xml-> m :CVEExamples zip-xml/text))
-          (map Description (zip-xml/xml-> m :ThreatCategory zip-xml/text))) ) )
+          (map ThreatCategory (zip-xml/xml-> m :ThreatCategory zip-xml/text))))
 
+ 
+) 
+
+
+(save-ontology "ontology.omn" :omn)
+(save-ontology "ontology2.owl" :owl)
 
 
 
@@ -121,7 +137,7 @@
   (some-> node :tag (= :row)))
 (def x
 
-  (->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
+  (->>"mtc-data.xml" ; using thread last macro to pass the result of each function to next function
       io/resource
       io/file ;input xml will be read
       xml/parse ; xml wil be parse
@@ -131,7 +147,7 @@
 
 (def claz-names
 
-  (->>"mtc-dat.xml" ; using thread last macro to pass the result of each function to next function
+  (->>"mtc-data.xml" ; using thread last macro to pass the result of each function to next function
       io/resource
       io/file ;input xml will be read
       xml/parse ; xml wil be parse
@@ -152,7 +168,7 @@
 (defn threatID-product? [node]
   (some-> node :tag (= :ThreatID)))
 
-(->>"mtc-dat.xml"
+(->>"mtc-data.xml"
      io/resource
      io/file
      xml/parse
@@ -163,7 +179,7 @@
 (defn threatC-product? [node]
   (some-> node :tag (= :ThreatCategory)))
 
-(->>"mtc-dat.xml"
+(->>"mtc-data.xml"
      io/resource
      io/file
      xml/parse
@@ -174,7 +190,7 @@
 (defn threatCVE-product? [node]
   (some-> node :tag (= :CVEExamples)))
 
-(->>"mtc-dat.xml"
+(->>"mtc-data.xml"
      io/resource
      io/file
      xml/parse

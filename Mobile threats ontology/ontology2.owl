@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="urn:absolute:87685147-f2ba-4bf8-bf8e-37667dee597b#threats"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="urn:absolute:87685147-f2ba-4bf8-bf8e-37667dee597b#threats">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="pattern" IRI="http://www.w3id.org/ontolink/pattern.owl#"/>
+    <Prefix name="threats" IRI="urn:absolute:87685147-f2ba-4bf8-bf8e-37667dee597b#threats#"/>
+    <Import>http://www.purl.org/ontolink/tawny</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">threats</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An ontology for mobile threat Catalogue (MTC), which describes, identifies, and structures the threats posed to mobile information systems.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Payment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalAccess"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#CVEExamples"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Privacy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasThreatCategory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaliciousOrprivacy-invasiveApplication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LAN&amp;PAN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#eman"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupplyChain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cellular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ecosystem"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ThreatOrigin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Threat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Eavesdropping on Unencryted App Traffic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Authentication"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#Description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ExploitExamples"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThreatCategory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VulnerableApplications"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EMM"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#Id"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ThreatCategory"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ThreatCategory"/>
+        <ObjectUnionOf>
+            <Class IRI="#Application"/>
+            <Class IRI="#Authentication"/>
+            <Class IRI="#Cellular"/>
+            <Class IRI="#EMM"/>
+            <Class IRI="#Ecosystem"/>
+            <Class IRI="#GPS"/>
+            <Class IRI="#Payment"/>
+            <Class IRI="#PhysicalAccess"/>
+            <Class IRI="#Privacy"/>
+            <Class IRI="#Stack"/>
+            <Class IRI="#SupplyChain"/>
+            <Class IRI="#LAN&amp;PAN"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Application"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Authentication"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cellular"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EMM"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ecosystem"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPS"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaliciousOrprivacy-invasiveApplication"/>
+        <Class IRI="#Application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Payment"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalAccess"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Privacy"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stack"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupplyChain"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VulnerableApplications"/>
+        <Class IRI="#Application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LAN&amp;PAN"/>
+        <Class IRI="#ThreatCategory"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Application"/>
+        <Class IRI="#Authentication"/>
+        <Class IRI="#Cellular"/>
+        <Class IRI="#EMM"/>
+        <Class IRI="#Ecosystem"/>
+        <Class IRI="#GPS"/>
+        <Class IRI="#Payment"/>
+        <Class IRI="#PhysicalAccess"/>
+        <Class IRI="#Privacy"/>
+        <Class IRI="#Stack"/>
+        <Class IRI="#SupplyChain"/>
+        <Class IRI="#LAN&amp;PAN"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MaliciousOrprivacy-invasiveApplication"/>
+        <Class IRI="#VulnerableApplications"/>
+    </DisjointClasses>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasThreatCategory"/>
+        <Class IRI="#ThreatCategory"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Application</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Application</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Application</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Application</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Authentication</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Authentication</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Authentication</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Authentication</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#CVEExamples</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CVEExamples</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Cellular</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cellular</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Cellular</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Cellular</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Description</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#EMM</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EMM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#EMM</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#EMM</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Ecosystem</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ecosystem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Ecosystem</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Ecosystem</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#ExploitExamples</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ExploitExamples</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#GPS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GPS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#GPS</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#GPS</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Id</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#MaliciousOrprivacy-invasiveApplication</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaliciousOrprivacy-invasiveApplication</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaliciousOrprivacy-invasiveApplication</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This subcategory identifies mobile malware based threats, based in part off of Google&apos;s mobile classification taxonomy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Payment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Payment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Payment</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Payment</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#PhysicalAccess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PhysicalAccess</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#PhysicalAccess</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#PhysicalAccess</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Privacy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Privacy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Privacy</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Privacy</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Stack</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stack</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#Stack</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#Stack</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#SupplyChain</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SupplyChain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#SupplyChain</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#SupplyChain</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Threat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Threat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Threat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The threat is a potential negative action or event facilitated by a vulnerability that results in an unwanted impact on a computer system, application and mobile devices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#ThreatCategory</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ThreatCategory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#ThreatCategory</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#ThreatOrigin</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ThreatOrigin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#VulnerableApplications</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">VulnerableApplications</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VulnerableApplications</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This subcategory contains threats relating to discrete software vulnerabilities residing within mobile applications running atop the mobile operating system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#eman</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">eman</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#eman</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"> to creat classes for threats</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#hasThreatCategory</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hasThreatCategory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#hasThreatCategory</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#Eavesdropping on Unencryted App Traffic</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Eavesdropping on Unencryted App Traffic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Eavesdropping on Unencryted App Traffic</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"> to creat classes for threats</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.purl.org/ontolink/tawny#name"/>
+        <IRI>#LAN&amp;PAN</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LAN&amp;PAN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:facetvalue"/>
+        <IRI>#LAN&amp;PAN</IRI>
+        <IRI>#hasThreatCategory</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pattern:inpattern"/>
+        <IRI>#LAN&amp;PAN</IRI>
+        <AnonymousIndividual nodeID="_:genid8"/>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
